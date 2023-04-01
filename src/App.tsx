@@ -40,7 +40,6 @@ function App() {
     if (!id) return;
 
     const foundIndex = projects?.findIndex((project) => project.id === id);
-
     if (foundIndex || foundIndex === 0) {
       dispatch(deleteProjectFunc(id));
     }

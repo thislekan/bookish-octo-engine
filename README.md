@@ -1,46 +1,45 @@
-# Getting Started with Create React App
+#### How to setup this project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Pull the project to your local machine
+run `npm install` and after the installation run `npm run start`
 
-## Available Scripts
+#### Design decisions
 
-In the project directory, you can run:
+Although Ant Design Components were recommended, I had to overwrite some styles to fit the original design. Some elements that were not in the design were introduced (listed below and why). The major difference between the shared design and the project (apart from introduced element) is the create button which was made to appear on the bottom right corner on mobile.
 
-### `npm start`
+- Edit Input's Close Button: to allow users decide on not editing and allowing them move on to other tasks
+- Create Project Button (mobile): Button appears on bottom right corner in order to prevent users from extending fingers to create project
+- Bulk Delete Project's Checkbox: This checkbox displays on hover but will also display on click on mobile.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Architecture Decisions
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The projects are the only data stored in Redux. Every other component manages their state on a need to basis. All states are either implicitly typed or explicitly typed.
 
-### `npm test`
+#### List of features completed
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [x] Add new project
+- [x] Rename project
+- [x] Delete project
 
-### `npm run build`
+#### extra features implemented
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [x] Responsive and mobile friendly
+- [x] Drag and drop project
+- [x] Use a state management library such as Redux
+- [x] Bulk delete projects
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Things to note
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- the created projects are not persisted
+- if the testing of the site is done on devtools, when the selected UI is mobile, some of the click events for the projects do not work. The issue is with the drag & drop package used but it works great on actual mobile phones.
 
-### `npm run eject`
+#### What can be improved?
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Writing tests
+- Implementing Pagination
+- introducing a sorting feature to sort by date
+- Introduce clickaway to projects to allow users hide checkbox when they click on project on mobile
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+the url for the project can be found [here](https://main--funny-kitsune-d273d2.netlify.app/)
