@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, BaseSyntheticEvent } from "react";
 import { v4 as uuidV4 } from "uuid";
 import { DropResult } from "react-beautiful-dnd";
 import { Button } from "antd";
@@ -49,8 +49,9 @@ function App() {
     setOpenModal(false);
   };
 
-  const handleDeleteProject = (id: string) => () => {
+  const handleDeleteProject = (id: string) => (e: BaseSyntheticEvent) => {
     if (!id) return;
+    e.stopPropagation();
     idToBeDeleted.current = id;
     setOpenModal(true);
   };

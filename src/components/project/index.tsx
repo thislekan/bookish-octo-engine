@@ -35,8 +35,8 @@ const ProjectComponent = ({
   const [isMouseOn, setIsMouseOn] = useState(false);
   let timeoutId: ReturnType<typeof setTimeout>;
 
-  const toggleInputField = () => {
-    console.log("toggling input field");
+  const toggleInputField = (e: BaseSyntheticEvent) => {
+    e.stopPropagation();
     setIsEditing(!isEditing);
   };
   const toggleChecked = () => setChecked(!checked);
@@ -51,11 +51,10 @@ const ProjectComponent = ({
     setIsMouseOn(false);
     if (showCheckBox) setShowCheckBox(false);
   };
-  // const handleRowClick = () => {
-  //   console.log("row clicked");
-  //   setChecked(true);
-  //   setShowCheckBox(true);
-  // };
+  const handleRowClick = () => {
+    setChecked(true);
+    setShowCheckBox(true);
+  };
   const handleChange = (e: BaseSyntheticEvent) => {
     const { value } = e.target;
     setProjectName(value);
@@ -119,11 +118,11 @@ const ProjectComponent = ({
 
   return (
     <StyledRow
-      // onClick={handleRowClick}
-      onMouseOver={handleMouseOver}
+      onClick={handleRowClick}
+      onMouseEnter={handleMouseOver}
       onMouseLeave={handleMouseLeave}
     >
-      {(showCheckBox || checked) && (
+      {!isEditing && (showCheckBox || checked) && (
         <Checkbox checked={checked} onChange={toggleChecked} />
       )}
       <Avatar size={32} src={<img src={BeaverFull} alt="project logo" />} />

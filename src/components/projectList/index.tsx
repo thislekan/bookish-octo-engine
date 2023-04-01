@@ -40,17 +40,6 @@ function ProjectListComponent({
         )}
       </StrictModeDroppable>
     </DragDropContext>
-    // <>
-    //   {projects.map((item) => (
-    //     <Project
-    //       handleEditProject={handleEditProject}
-    //       project={item}
-    //       handleDeleteProject={handleDeleteProject}
-    //       key={item.id}
-    //       setCheckList={setCheckList}
-    //     />
-    //   ))}
-    // </>
   );
 }
 
