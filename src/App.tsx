@@ -15,9 +15,10 @@ import {
 } from "app/projectSlice";
 import { AppDiv, StyledDeleteBtnDiv } from "appStyles";
 import { ProjectList } from "components/projectList";
+import { IProject } from "interface";
 
 function App() {
-  const projects = useAppSelector((state) => state.projects);
+  const projects: IProject[] = useAppSelector((state) => state.projects);
   const dispatch = useAppDispatch();
   const [isNewProject, setIsNewProject] = useState(false);
   const [openModal, setOpenModal] = useState(false);

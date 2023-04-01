@@ -51,11 +51,11 @@ const ProjectComponent = ({
     setIsMouseOn(false);
     if (showCheckBox) setShowCheckBox(false);
   };
-  const handleRowClick = () => {
-    console.log("row clicked");
-    setChecked(true);
-    setShowCheckBox(true);
-  };
+  // const handleRowClick = () => {
+  //   console.log("row clicked");
+  //   setChecked(true);
+  //   setShowCheckBox(true);
+  // };
   const handleChange = (e: BaseSyntheticEvent) => {
     const { value } = e.target;
     setProjectName(value);
