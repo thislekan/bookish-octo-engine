@@ -3,7 +3,6 @@ import { DragDropContext, Draggable } from "react-beautiful-dnd";
 import { StrictModeDroppable } from "components/utils/strictModeDroppable";
 import { Project } from "components/project";
 import { ProjectListProps } from "components/projectList/interface";
-import Item from "antd/es/list/Item";
 
 function ProjectListComponent({
   projects,
